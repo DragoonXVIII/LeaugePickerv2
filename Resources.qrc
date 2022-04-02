@@ -58,7 +58,7 @@
     </qresource>
     <qresource prefix="/Keystone/Domination/tab_1">
         <file>Runes/Basic_runes/Domination/malice/Cheap Shot.png</file>
-        <file>Runes/Basic_runes/Domination/malice/Green Terror.png</file>
+        <file>Runes/Basic_runes/Domination/malice/Taste of Blood.png</file>
         <file>Runes/Basic_runes/Domination/malice/Sudden Impact.png</file>
     </qresource>
     <qresource prefix="/Keystone/Domination/tab_2">
@@ -68,9 +68,9 @@
     </qresource>
     <qresource prefix="/Keystone/Domination/tab_3">
         <file>Runes/Basic_runes/Domination/hunter/Ingenious Hunter.png</file>
-        <file>Runes/Basic_runes/Domination/hunter/Ravenous Hunter.png</file>
         <file>Runes/Basic_runes/Domination/hunter/Relentless Hunter.png</file>
         <file>Runes/Basic_runes/Domination/hunter/Ultimate Hunter.png</file>
+        <file>Runes/Basic_runes/Domination/hunter/TreasureHunter.png</file>
     </qresource>
     <qresource prefix="/Keystone/Sorcery/keystone">
         <file>Runes/Basic_runes/Sorcery/keystone/Arcane Comet.png</file>

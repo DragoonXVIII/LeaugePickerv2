@@ -320,6 +320,11 @@ void MainWindow::pick_keystone_and_keystone_runes()
 
     int ID_exchange[4][4] = {};
 
+    int keystone;
+    int keystone_tab_1;
+    int keystone_tab_2;
+    int keystone_tab_3;
+
     QString QDir_directory_of_keystone_tab_1;
     QString QDir_directory_of_keystone_tab_2;
     QString QDir_directory_of_keystone_tab_3;
@@ -399,16 +404,23 @@ void MainWindow::pick_keystone_and_keystone_runes()
     QList<QString> keystone_tab_3_to_chose_from = directory_of_keystone_tab_3.entryList(QStringList(),QDir::Files);
     QList<QString> keystones_to_chose_from = directory_of_keystones.entryList(QStringList(),QDir::Files);
 
-    int rune_tree;
-    int keystone;
-    int keystone_tab_1;
-    int keystone_tab_2;
-    int keystone_tab_3;
+    keystone_tab_1 = Randompickv8(keystone_tab_1_to_chose_from.length());
+    keystone_tab_2 = Randompickv8(keystone_tab_2_to_chose_from.length());
+    keystone_tab_3 = Randompickv8(keystone_tab_3_to_chose_from.length());
+    keystone = Randompickv8(keystones_to_chose_from.length());
 
-    QString selected_keystone_tab_1_name = (keystone_tab_1_to_chose_from[Randompickv8(keystone_tab_1_to_chose_from.length())]);
-    QString selected_keystone_tab_2_name = (keystone_tab_2_to_chose_from[Randompickv8(keystone_tab_2_to_chose_from.length())]);
-    QString selected_keystone_tab_3_name = (keystone_tab_3_to_chose_from[Randompickv8(keystone_tab_3_to_chose_from.length())]);
-    QString selected_keystone_name = (keystones_to_chose_from[Randompickv8(keystones_to_chose_from.length())]);
+    qDebug()<<"+===START===+";
+    qDebug()<<"main: "<<tree_of_runes;
+    qDebug()<<"keystone: "<<keystone;
+    qDebug()<<"keystone_tab_1: "<<keystone_tab_1;
+    qDebug()<<"keystone_tab_2: "<<keystone_tab_2;
+    qDebug()<<"keystone_tab_3: "<<keystone_tab_3;
+    qDebug()<<"+===END===+";
+
+    QString selected_keystone_tab_1_name = (keystone_tab_1_to_chose_from[keystone_tab_1]);
+    QString selected_keystone_tab_2_name = (keystone_tab_2_to_chose_from[keystone_tab_2]);
+    QString selected_keystone_tab_3_name = (keystone_tab_3_to_chose_from[keystone_tab_3]);
+    QString selected_keystone_name = (keystones_to_chose_from[keystone]);
 
     QString selected_keystone_tab_1 = (QDir_directory_of_keystone_tab_1+selected_keystone_tab_1_name);
     QString selected_keystone_tab_2 = (QDir_directory_of_keystone_tab_2+selected_keystone_tab_2_name);

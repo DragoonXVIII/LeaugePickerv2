@@ -1,101 +1,101 @@
 RUNE:
 
-	Precision: 8000
+	Precision: 8000							index_in_lp2: 2
 		Keystone:
-			Press the Attack: 8005
-			Lethal Tempo: 8008
-			Conqueror: 8010
-			Fleet Footwork: 8021
+			Press the Attack: 8005				index_in_lp2: 3
+			Lethal Tempo: 8008				index_in_lp2: 2
+			Conqueror: 8010					index_in_lp2: 0
+			Fleet Footwork: 8021				index_in_lp2: 1
 		1tab:
-			Overheal: 9101
-			Triumph: 9111
-			Presence of Mind: 8009
-		2tab:
-			Alacrity: 9104
-			Tenacity: 9105
-			Bloodline: 9103
+			Overheal: 9101					index_in_lp2: 0
+			Triumph: 9111					index_in_lp2: 2
+			Presence of Mind: 8009				index_in_lp2: 1
+		2tab:		
+			Alacrity: 9104					index_in_lp2: 0
+			Tenacity: 9105					index_in_lp2: 2
+			Bloodline: 9103					index_in_lp2: 1
 		3tab: 
-			Cut Down: 8017
-			Last Stand: 8299
-			Coup de Grace: 8014
+			Cut Down: 8017					index_in_lp2: 1
+			Last Stand: 8299					index_in_lp2: 2
+			Coup de Grace: 8014				index_in_lp2: 0
 		
-	Domination: 8100
+	Domination: 8100							index_in_lp2: 0
 
 		Keystone: 
-			Electrocute: 8112
-			Predator: 8124
-			Dark Harvest: 8128
-			HailofBlades: 9923
+			Electrocute: 8112					index_in_lp2: 1
+			Predator: 8124					index_in_lp2: 3
+			Dark Harvest: 8128				index_in_lp2: 0
+			HailofBlades: 9923				index_in_lp2: 2
 		1tab:
-			Cheap Shot: 8126
-			Taste of Blood: 8139
-			Sudden Impact: 8143
+			Cheap Shot: 8126					index_in_lp2: 0
+			Taste of Blood: 8139				index_in_lp2: 2
+			Sudden Impact: 8143				index_in_lp2: 1
 		2tab:
-			Ghost Poro: 8120
-			Zombie Ward: 8136
-			Eyball Colletion: 8138
+			Ghost Poro: 8120					index_in_lp2: 1
+			Zombie Ward: 8136					index_in_lp2: 2
+			Eyball Colletion: 8138				index_in_lp2: 0
 		3tab:
-			Treasure Hunter: 8135
-			Ingenioues Hunter: 8134
-			Relentless Hunter: 8105
-			Ultimate Hunter: 8106
-			
-	Sorcery: 8200
+			Treasure Hunter: 8135				index_in_lp2: 2
+			Ingenioues Hunter: 8134				index_in_lp2: 0
+			Relentless Hunter: 8105				index_in_lp2: 1
+			Ultimate Hunter: 8106				index_in_lp2: 3
+				
+	Sorcery: 8200							index_in_lp2: 4
 
-		Keystone:
-			Summon Aery: 8214
-			Arcane Comet: 8229
-			Phase Rush: 8230
+		Keystone:						
+			Summon Aery: 8214					index_in_lp2: 2
+			Arcane Comet: 8229				index_in_lp2: 0
+			Phase Rush: 8230					index_in_lp2: 1
 		1tab:
-			Nullifying Orb: 8224
-			ManaflowBand: 8226
-			Nimbus Cloak: 8275
+			Nullifying Orb: 8224				index_in_lp2: 2
+			ManaflowBand: 8226				index_in_lp2: 0
+			Nimbus Cloak: 8275				index_in_lp2: 1
 		2tab:
-			Celertity: 8234
-			Trandescence: 8210
-			Absolute Focus: 8233
+			Celertity: 8234					index_in_lp2: 1
+			Trandescence: 8210				index_in_lp2: 2
+			Absolute Focus: 8233				index_in_lp2: 0
 		3tab: 
-			Scorch: 8237
-			Waterwalking: 8232
-			Gathering Storm: 8236
+			Scorch: 8237					index_in_lp2: 1
+			Waterwalking: 8232				index_in_lp2: 2
+			Gathering Storm: 8236				index_in_lp2: 0
 
-	Resolve: 8400
-
-		Keystone:
-			Grasp of Udnying: 8437
-			AfterShock: 8439
-			Guardian: 8465
-		1tab:
-			Demolish: 8446
-			Font of Life: 8463
-			Shield Bash: 8401
-		2tab:
-			Conditioning: 8429
-			Second Wind: 8444
-			Boneplating: 8473
-		3tab:
-			Overgrowth: 8451
-			Unflitching: 8453
-			Revitalize: 8242
-
-	Inspiration: 8300
+	Resolve: 8400							index_in_lp2: 3
 
 		Keystone:
-			Glacial Augment: 8351
-			Unsealed SpellBook: 8360
-			FirstStrike: 8369
+			Grasp of Udnying: 8437				index_in_lp2: 0
+			AfterShock: 8439					index_in_lp2: 2
+			Guardian: 8465					index_in_lp2: 1
 		1tab:
-			Hexflash: 8306
-			Magical Footwear: 8304
-			Perfect Timing: 8313
+			Demolish: 8446					index_in_lp2: 0
+			Font of Life: 8463				index_in_lp2: 1
+			Shield Bash: 8401					index_in_lp2: 2
 		2tab:
-			Future's Market: 8321
-			Minion Demateriliarizer: 8316
-			Biscuit Delivery: 8345
+			Conditioning: 8429				index_in_lp2: 1
+			Second Wind: 8444					index_in_lp2: 2
+			Boneplating: 8473					index_in_lp2: 0
 		3tab:
-			Cosmic Insights: 8347
-			Aproach Velocity: 8410
-			Time Warp Tonic: 8352
+			Overgrowth: 8451					index_in_lp2: 0
+			Unflitching: 8453					index_in_lp2: 2
+			Revitalize: 8242					index_in_lp2: 1
+
+	Inspiration: 8300							index_in_lp2: 1
+
+		Keystone:
+			Glacial Augment: 8351				index_in_lp2: 1
+			Unsealed SpellBook: 8360			index_in_lp2: 2
+			FirstStrike: 8369					index_in_lp2: 0
+		1tab:
+			Hexflash: 8306					index_in_lp2: 0
+			Magical Footwear: 8304				index_in_lp2: 1
+			Perfect Timing: 8313				index_in_lp2: 2
+		2tab:
+			Future's Market: 8321				index_in_lp2: 1
+			Minion Demateriliarizer: 8316			index_in_lp2: 2
+			Biscuit Delivery: 8345				index_in_lp2: 0
+		3tab:
+			Cosmic Insights: 8347				index_in_lp2: 1
+			Aproach Velocity: 8410				index_in_lp2: 0
+			Time Warp Tonic: 8352				index_in_lp2: 2
 
 ADAPTIVE:
 
