@@ -265,9 +265,11 @@ void MainWindow::pick_adaptive()
     adaptive_2 = Randompickv8(adaptives_to_chose_from_2.length());
     adaptive_3 = Randompickv8(adaptives_to_chose_from_3.length());
 
-    //qDebug()<<adaptive_1;
-    //qDebug()<<adaptive_2;
-    //qDebug()<<adaptive_3;
+    qDebug()<<adaptive_1;
+    qDebug()<<adaptive_2;
+    qDebug()<<adaptive_3;
+
+
 
     QString selected_adaptive_1_name = (adaptives_to_chose_from_1[adaptive_1]);
     QString selected_adaptive_2_name = (adaptives_to_chose_from_2[adaptive_2]);
@@ -1362,5 +1364,4 @@ void MainWindow::on_pushButton_13_clicked()
 // nie usuwac
 int jebac_przemka;
 //xdxd
-
 
