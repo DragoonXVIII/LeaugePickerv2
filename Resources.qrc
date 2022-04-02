@@ -1,0 +1,323 @@
+<RCC>
+    <qresource prefix="/Adaptive/tab1">
+        <file>Runes/Adaptive/1tab/Adaptive ForceIcon.png</file>
+        <file>Runes/Adaptive/1tab/Attack SpeedIcon.png</file>
+        <file>Runes/Adaptive/1tab/Scaling CDRIcon.png</file>
+    </qresource>
+    <qresource prefix="/Adaptive/tab2">
+        <file>Runes/Adaptive/2tab/Adaptive ForceIcon.png</file>
+        <file>Runes/Adaptive/2tab/ArmorIcon.png</file>
+        <file>Runes/Adaptive/2tab/Magic ResistIcon.png</file>
+    </qresource>
+    <qresource prefix="/Adaptive/tab3">
+        <file>Runes/Adaptive/3tab/ArmorIcon.png</file>
+        <file>Runes/Adaptive/3tab/Health ScalingIcon.png</file>
+        <file>Runes/Adaptive/3tab/Magic ResistIcon.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Precision">
+        <file>Runes/Basic_runes/Precision/Precision.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Domination">
+        <file>Runes/Basic_runes/Domination/Domination.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Sorcery">
+        <file>Runes/Basic_runes/Sorcery/Sorcery.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Resolve">
+        <file>Runes/Basic_runes/Resolve/Resolve.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Inspiration">
+        <file>Runes/Basic_runes/Inspiration/Whimsy.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Precision/keystone">
+        <file>Runes/Basic_runes/Precision/keystone/Conqueror.png</file>
+        <file>Runes/Basic_runes/Precision/keystone/Fleet Footwork.png</file>
+        <file>Runes/Basic_runes/Precision/keystone/Lethal Tempo.png</file>
+        <file>Runes/Basic_runes/Precision/keystone/Press The Attack.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Precision/tab_1">
+        <file>Runes/Basic_runes/Precision/heroism/Overheal.png</file>
+        <file>Runes/Basic_runes/Precision/heroism/Presence Of Mind.png</file>
+        <file>Runes/Basic_runes/Precision/heroism/Triumph.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Precision/tab_2">
+        <file>Runes/Basic_runes/Precision/legend/Legend Alacrity.png</file>
+        <file>Runes/Basic_runes/Precision/legend/Legend Bloodline.png</file>
+        <file>Runes/Basic_runes/Precision/legend/Legend Tenacity.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Precision/tab_3">
+        <file>Runes/Basic_runes/Precision/combat/Coup De Grace.png</file>
+        <file>Runes/Basic_runes/Precision/combat/Cut Down.png</file>
+        <file>Runes/Basic_runes/Precision/combat/Last Stand.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Domination/keystone">
+        <file>Runes/Basic_runes/Domination/keystone/Dark Harvest.png</file>
+        <file>Runes/Basic_runes/Domination/keystone/Electrocute.png</file>
+        <file>Runes/Basic_runes/Domination/keystone/Hail Of Blades.png</file>
+        <file>Runes/Basic_runes/Domination/keystone/Predator.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Domination/tab_1">
+        <file>Runes/Basic_runes/Domination/malice/Cheap Shot.png</file>
+        <file>Runes/Basic_runes/Domination/malice/Green Terror.png</file>
+        <file>Runes/Basic_runes/Domination/malice/Sudden Impact.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Domination/tab_2">
+        <file>Runes/Basic_runes/Domination/tracking/Eyeball Collection.png</file>
+        <file>Runes/Basic_runes/Domination/tracking/Ghost Poro.png</file>
+        <file>Runes/Basic_runes/Domination/tracking/Zombie Ward.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Domination/tab_3">
+        <file>Runes/Basic_runes/Domination/hunter/Ingenious Hunter.png</file>
+        <file>Runes/Basic_runes/Domination/hunter/Ravenous Hunter.png</file>
+        <file>Runes/Basic_runes/Domination/hunter/Relentless Hunter.png</file>
+        <file>Runes/Basic_runes/Domination/hunter/Ultimate Hunter.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Sorcery/keystone">
+        <file>Runes/Basic_runes/Sorcery/keystone/Arcane Comet.png</file>
+        <file>Runes/Basic_runes/Sorcery/keystone/Phase Rush.png</file>
+        <file>Runes/Basic_runes/Sorcery/keystone/Summon Aery.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Sorcery/tab_1">
+        <file>Runes/Basic_runes/Sorcery/artifact/Manaflow Band.png</file>
+        <file>Runes/Basic_runes/Sorcery/artifact/Nimbus Cloak.png</file>
+        <file>Runes/Basic_runes/Sorcery/artifact/Nullifying Orb.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Sorcery/tab_2">
+        <file>Runes/Basic_runes/Sorcery/excellence/Absolute Focus.png</file>
+        <file>Runes/Basic_runes/Sorcery/excellence/Celerity Temp.png</file>
+        <file>Runes/Basic_runes/Sorcery/excellence/Transcendence.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Sorcery/tab_3">
+        <file>Runes/Basic_runes/Sorcery/power/Gathering Storm.png</file>
+        <file>Runes/Basic_runes/Sorcery/power/Scorch.png</file>
+        <file>Runes/Basic_runes/Sorcery/power/Waterwalking.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Resolve/keystone">
+        <file>Runes/Basic_runes/Resolve/keystone/Grasp Of The Undying.png</file>
+        <file>Runes/Basic_runes/Resolve/keystone/Guardian.png</file>
+        <file>Runes/Basic_runes/Resolve/keystone/Veteran Aftershock.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Resolve/tab_1">
+        <file>Runes/Basic_runes/Resolve/strength/Demolish.png</file>
+        <file>Runes/Basic_runes/Resolve/strength/Font Of Life.png</file>
+        <file>Runes/Basic_runes/Resolve/strength/Mirror Shell.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Resolve/tab_2">
+        <file>Runes/Basic_runes/Resolve/resistance/Bone Plating.png</file>
+        <file>Runes/Basic_runes/Resolve/resistance/Conditioning.png</file>
+        <file>Runes/Basic_runes/Resolve/resistance/Second Wind.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Resolve/tab_3">
+        <file>Runes/Basic_runes/Resolve/vitality/Overgrowth.png</file>
+        <file>Runes/Basic_runes/Resolve/vitality/Revitalize.png</file>
+        <file>Runes/Basic_runes/Resolve/vitality/Unflinching.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Inspiration/keystone">
+        <file>Runes/Basic_runes/Inspiration/keystone/First Strike.png</file>
+        <file>Runes/Basic_runes/Inspiration/keystone/Glacial Augment.png</file>
+        <file>Runes/Basic_runes/Inspiration/keystone/Unsealed Spellbook.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Inspiration/tab_1">
+        <file>Runes/Basic_runes/Inspiration/contraptions/Hextech Flashtraption.png</file>
+        <file>Runes/Basic_runes/Inspiration/contraptions/Magical Footwear.png</file>
+        <file>Runes/Basic_runes/Inspiration/contraptions/Perfect Timing.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Inspiration/tab_2">
+        <file>Runes/Basic_runes/Inspiration/tomorrow/Biscuit Delivery.png</file>
+        <file>Runes/Basic_runes/Inspiration/tomorrow/Futures Market.png</file>
+        <file>Runes/Basic_runes/Inspiration/tomorrow/Minion Dematerializer.png</file>
+    </qresource>
+    <qresource prefix="/Keystone/Inspiration/tab_3">
+        <file>Runes/Basic_runes/Inspiration/beyond/Approach Velocity.png</file>
+        <file>Runes/Basic_runes/Inspiration/beyond/Cosmic Insight.png</file>
+        <file>Runes/Basic_runes/Inspiration/beyond/Time Warp Tonic.png</file>
+    </qresource>
+    <qresource prefix="/Icons">
+        <file>../../Users/lotro/Downloads/Rune_icon.png</file>
+        <file>../../Users/lotro/Downloads/iconmonstr-gear-2-64 (2).png</file>
+        <file>../../Users/lotro/Downloads/helmet.png</file>
+        <file>Background/Nexus-Blitz-Loading-Screen-scaled.jpg</file>
+        <file>../../Users/lotro/Downloads/iconmonstr-help-3-240.png</file>
+        <file>Icons/vwk964k1e4z51.png</file>
+        <file>Icons/Logo.png</file>
+        <file>../../Users/lotro/Downloads/iconmonstr-info-6-240.png</file>
+        <file>Background/Nexus-Blitz-Loading-Screen-scaledcopy.jpg</file>
+        <file>../../Users/lotro/Downloads/iconmonstr-gear-2-240.png</file>
+        <file>../../Users/lotro/Downloads/iconmonstr-info-6-240 (1).png</file>
+        <file>../../Users/lotro/Downloads/rolling-dices.png</file>
+        <file>Icons/Logo.ico</file>
+    </qresource>
+    <qresource prefix="/Champions">
+        <file>champion/Aatrox.png</file>
+        <file>champion/Ahri.png</file>
+        <file>champion/Akali.png</file>
+        <file>champion/Akshan.png</file>
+        <file>champion/Alistar.png</file>
+        <file>champion/Amumu.png</file>
+        <file>champion/Anivia.png</file>
+        <file>champion/Annie.png</file>
+        <file>champion/Aphelios.png</file>
+        <file>champion/Ashe.png</file>
+        <file>champion/AurelionSol.png</file>
+        <file>champion/Azir.png</file>
+        <file>champion/Bard.png</file>
+        <file>champion/Blitzcrank.png</file>
+        <file>champion/Brand.png</file>
+        <file>champion/Braum.png</file>
+        <file>champion/Caitlyn.png</file>
+        <file>champion/Camille.png</file>
+        <file>champion/Cassiopeia.png</file>
+        <file>champion/Chogath.png</file>
+        <file>champion/Corki.png</file>
+        <file>champion/Darius.png</file>
+        <file>champion/Diana.png</file>
+        <file>champion/Draven.png</file>
+        <file>champion/DrMundo.png</file>
+        <file>champion/Ekko.png</file>
+        <file>champion/Elise.png</file>
+        <file>champion/Evelynn.png</file>
+        <file>champion/Ezreal.png</file>
+        <file>champion/Fiddlesticks.png</file>
+        <file>champion/Fiora.png</file>
+        <file>champion/Fizz.png</file>
+        <file>champion/Galio.png</file>
+        <file>champion/Gangplank.png</file>
+        <file>champion/Garen.png</file>
+        <file>champion/Gnar.png</file>
+        <file>champion/Gragas.png</file>
+        <file>champion/Graves.png</file>
+        <file>champion/Gwen.png</file>
+        <file>champion/Hecarim.png</file>
+        <file>champion/Heimerdinger.png</file>
+        <file>champion/Illaoi.png</file>
+        <file>champion/Irelia.png</file>
+        <file>champion/Ivern.png</file>
+        <file>champion/Janna.png</file>
+        <file>champion/JarvanIV.png</file>
+        <file>champion/Jax.png</file>
+        <file>champion/Jayce.png</file>
+        <file>champion/Jhin.png</file>
+        <file>champion/Jinx.png</file>
+        <file>champion/Kaisa.png</file>
+        <file>champion/Kalista.png</file>
+        <file>champion/Karma.png</file>
+        <file>champion/Karthus.png</file>
+        <file>champion/Kassadin.png</file>
+        <file>champion/Katarina.png</file>
+        <file>champion/Kayle.png</file>
+        <file>champion/Kayn.png</file>
+        <file>champion/Kennen.png</file>
+        <file>champion/Khazix.png</file>
+        <file>champion/Kindred.png</file>
+        <file>champion/Kled.png</file>
+        <file>champion/KogMaw.png</file>
+        <file>champion/Leblanc.png</file>
+        <file>champion/LeeSin.png</file>
+        <file>champion/Leona.png</file>
+        <file>champion/Lillia.png</file>
+        <file>champion/Lissandra.png</file>
+        <file>champion/Lucian.png</file>
+        <file>champion/Lulu.png</file>
+        <file>champion/Lux.png</file>
+        <file>champion/Malphite.png</file>
+        <file>champion/Malzahar.png</file>
+        <file>champion/Maokai.png</file>
+        <file>champion/MasterYi.png</file>
+        <file>champion/MissFortune.png</file>
+        <file>champion/Wukong.png</file>
+        <file>champion/Mordekaiser.png</file>
+        <file>champion/Morgana.png</file>
+        <file>champion/Nami.png</file>
+        <file>champion/Nasus.png</file>
+        <file>champion/Nautilus.png</file>
+        <file>champion/Neeko.png</file>
+        <file>champion/Nidalee.png</file>
+        <file>champion/Nocturne.png</file>
+        <file>champion/Nunu.png</file>
+        <file>champion/Olaf.png</file>
+        <file>champion/Orianna.png</file>
+        <file>champion/Ornn.png</file>
+        <file>champion/Pantheon.png</file>
+        <file>champion/Poppy.png</file>
+        <file>champion/Pyke.png</file>
+        <file>champion/Qiyana.png</file>
+        <file>champion/Quinn.png</file>
+        <file>champion/Rakan.png</file>
+        <file>champion/Rammus.png</file>
+        <file>champion/RekSai.png</file>
+        <file>champion/Rell.png</file>
+        <file>champion/Renekton.png</file>
+        <file>champion/Rengar.png</file>
+        <file>champion/Riven.png</file>
+        <file>champion/Rumble.png</file>
+        <file>champion/Ryze.png</file>
+        <file>champion/Samira.png</file>
+        <file>champion/Sejuani.png</file>
+        <file>champion/Senna.png</file>
+        <file>champion/Seraphine.png</file>
+        <file>champion/Sett.png</file>
+        <file>champion/Shaco.png</file>
+        <file>champion/Shen.png</file>
+        <file>champion/Shyvana.png</file>
+        <file>champion/Singed.png</file>
+        <file>champion/Sion.png</file>
+        <file>champion/Sivir.png</file>
+        <file>champion/Skarner.png</file>
+        <file>champion/Sona.png</file>
+        <file>champion/Soraka.png</file>
+        <file>champion/Swain.png</file>
+        <file>champion/Sylas.png</file>
+        <file>champion/Syndra.png</file>
+        <file>champion/TahmKench.png</file>
+        <file>champion/Taliyah.png</file>
+        <file>champion/Talon.png</file>
+        <file>champion/Taric.png</file>
+        <file>champion/Teemo.png</file>
+        <file>champion/Thresh.png</file>
+        <file>champion/Tristana.png</file>
+        <file>champion/Trundle.png</file>
+        <file>champion/Tryndamere.png</file>
+        <file>champion/TwistedFate.png</file>
+        <file>champion/Twitch.png</file>
+        <file>champion/Udyr.png</file>
+        <file>champion/Urgot.png</file>
+        <file>champion/Varus.png</file>
+        <file>champion/Vayne.png</file>
+        <file>champion/Veigar.png</file>
+        <file>champion/Velkoz.png</file>
+        <file>champion/Vex.png</file>
+        <file>champion/Vi.png</file>
+        <file>champion/Viego.png</file>
+        <file>champion/Viktor.png</file>
+        <file>champion/Vladimir.png</file>
+        <file>champion/Volibear.png</file>
+        <file>champion/Warwick.png</file>
+        <file>champion/Xayah.png</file>
+        <file>champion/Xerath.png</file>
+        <file>champion/XinZhao.png</file>
+        <file>champion/Yasuo.png</file>
+        <file>champion/Yone.png</file>
+        <file>champion/Yorick.png</file>
+        <file>champion/Yuumi.png</file>
+        <file>champion/Zac.png</file>
+        <file>champion/Zed.png</file>
+        <file>champion/Zeri.png</file>
+        <file>champion/Ziggs.png</file>
+        <file>champion/Zilean.png</file>
+        <file>champion/Zoe.png</file>
+        <file>champion/Zyra.png</file>
+        <file>champion/Renata.png</file>
+    </qresource>
+    <qresource prefix="/Position">
+        <file>position/Bottom.png</file>
+        <file>position/Jungle.png</file>
+        <file>position/Middle.png</file>
+        <file>position/Autofill.png</file>
+        <file>position/Support.png</file>
+        <file>position/Top.png</file>
+    </qresource>
+    <qresource prefix="/sets">
+        <file>sets/all_champs.txt</file>
+        <file>sets/riotgames.pem</file>
+    </qresource>
+</RCC>

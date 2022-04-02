@@ -1,0 +1,114 @@
+RUNE:
+
+	Precision: 8000
+		Keystone:
+			Press the Attack: 8005
+			Lethal Tempo: 8008
+			Conqueror: 8010
+			Fleet Footwork: 8021
+		1tab:
+			Overheal: 9101
+			Triumph: 9111
+			Presence of Mind: 8009
+		2tab:
+			Alacrity: 9104
+			Tenacity: 9105
+			Bloodline: 9103
+		3tab: 
+			Cut Down: 8017
+			Last Stand: 8299
+			Coup de Grace: 8014
+		
+	Domination: 8100
+
+		Keystone: 
+			Electrocute: 8112
+			Predator: 8124
+			Dark Harvest: 8128
+			HailofBlades: 9923
+		1tab:
+			Cheap Shot: 8126
+			Taste of Blood: 8139
+			Sudden Impact: 8143
+		2tab:
+			Ghost Poro: 8120
+			Zombie Ward: 8136
+			Eyball Colletion: 8138
+		3tab:
+			Treasure Hunter: 8135
+			Ingenioues Hunter: 8134
+			Relentless Hunter: 8105
+			Ultimate Hunter: 8106
+			
+	Sorcery: 8200
+
+		Keystone:
+			Summon Aery: 8214
+			Arcane Comet: 8229
+			Phase Rush: 8230
+		1tab:
+			Nullifying Orb: 8224
+			ManaflowBand: 8226
+			Nimbus Cloak: 8275
+		2tab:
+			Celertity: 8234
+			Trandescence: 8210
+			Absolute Focus: 8233
+		3tab: 
+			Scorch: 8237
+			Waterwalking: 8232
+			Gathering Storm: 8236
+
+	Resolve: 8400
+
+		Keystone:
+			Grasp of Udnying: 8437
+			AfterShock: 8439
+			Guardian: 8465
+		1tab:
+			Demolish: 8446
+			Font of Life: 8463
+			Shield Bash: 8401
+		2tab:
+			Conditioning: 8429
+			Second Wind: 8444
+			Boneplating: 8473
+		3tab:
+			Overgrowth: 8451
+			Unflitching: 8453
+			Revitalize: 8242
+
+	Inspiration: 8300
+
+		Keystone:
+			Glacial Augment: 8351
+			Unsealed SpellBook: 8360
+			FirstStrike: 8369
+		1tab:
+			Hexflash: 8306
+			Magical Footwear: 8304
+			Perfect Timing: 8313
+		2tab:
+			Future's Market: 8321
+			Minion Demateriliarizer: 8316
+			Biscuit Delivery: 8345
+		3tab:
+			Cosmic Insights: 8347
+			Aproach Velocity: 8410
+			Time Warp Tonic: 8352
+
+ADAPTIVE:
+
+	1tab
+		adaptive force: 5008
+		attack speed: 5005
+		cooldown reduction: 5007
+	2tab
+		adaptive force: 5008
+		armor: 5002
+		magic resist: 5003
+	3tab
+		health: 5001
+		armor: 5002
+		cooldown reduction: 5007
+		
