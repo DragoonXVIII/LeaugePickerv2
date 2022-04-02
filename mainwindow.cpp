@@ -251,6 +251,7 @@ void MainWindow::pick_adaptive()
     int adaptive_1,adaptive_2,adaptive_3;
     int Randompickv8(int chosenarraylength);
 
+    int ID_exchange[3][3] = {5008,5005,5007,5008,5002,5003,5002,5001,5003};
     //int id_of_runes[10]; // 0 - main rune, 1 - m 1, 2 - m 2, 3 - m 3, 4 - secondary rune, 5 - s 1, 6 - s 2, 7 - a 1, 8 - a 2, 9 - a 3;
 
     QDir directory_of_adaptive_1(":/Adaptive/tab1/Runes/Adaptive/1tab/");
@@ -265,9 +266,12 @@ void MainWindow::pick_adaptive()
     adaptive_2 = Randompickv8(adaptives_to_chose_from_2.length());
     adaptive_3 = Randompickv8(adaptives_to_chose_from_3.length());
 
-    qDebug()<<adaptive_1;
-    qDebug()<<adaptive_2;
-    qDebug()<<adaptive_3;
+    //qDebug()<<adaptive_1;
+    qDebug()<<ID_exchange[0][adaptive_1];
+    //qDebug()<<adaptive_2;
+    qDebug()<<ID_exchange[1][adaptive_2];
+    //qDebug()<<adaptive_3;
+    qDebug()<<ID_exchange[2][adaptive_3];
 
 
 
@@ -314,7 +318,7 @@ void MainWindow::pick_keystone_and_keystone_runes()
 
     int picked_tree_of_runes_no = Randompickv8_2(5);
 
-
+    int ID_exchange[4][4] = {};
 
     QString QDir_directory_of_keystone_tab_1;
     QString QDir_directory_of_keystone_tab_2;
@@ -394,6 +398,12 @@ void MainWindow::pick_keystone_and_keystone_runes()
     QList<QString> keystone_tab_2_to_chose_from = directory_of_keystone_tab_2.entryList(QStringList(),QDir::Files);
     QList<QString> keystone_tab_3_to_chose_from = directory_of_keystone_tab_3.entryList(QStringList(),QDir::Files);
     QList<QString> keystones_to_chose_from = directory_of_keystones.entryList(QStringList(),QDir::Files);
+
+    int rune_tree;
+    int keystone;
+    int keystone_tab_1;
+    int keystone_tab_2;
+    int keystone_tab_3;
 
     QString selected_keystone_tab_1_name = (keystone_tab_1_to_chose_from[Randompickv8(keystone_tab_1_to_chose_from.length())]);
     QString selected_keystone_tab_2_name = (keystone_tab_2_to_chose_from[Randompickv8(keystone_tab_2_to_chose_from.length())]);

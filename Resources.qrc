@@ -319,5 +319,6 @@
     <qresource prefix="/sets">
         <file>sets/all_champs.txt</file>
         <file>sets/riotgames.pem</file>
+        <file>sets/Runes_ID.txt</file>
     </qresource>
 </RCC>

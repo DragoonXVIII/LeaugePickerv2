@@ -100,15 +100,15 @@ RUNE:
 ADAPTIVE:
 
 	1tab
-		adaptive force: 5008
-		attack speed: 5005
-		cooldown reduction: 5007
+		adaptive force: 5008 					index_in_lp2: 0
+		attack speed: 5005 					index_in_lp2: 1
+		cooldown reduction: 5007 				index_in_lp2: 2
 	2tab
-		adaptive force: 5008
-		armor: 5002
-		magic resist: 5003
+		adaptive force: 5008 					index_in_lp2: 0
+		armor: 5002 						index_in_lp2: 1
+		magic resist: 5003 					index_in_lp2: 2
 	3tab
-		health: 5001
-		armor: 5002
-		cooldown reduction: 5007
+		health: 5001 						index_in_lp2: 1 
+		armor: 5002 						index_in_lp2: 0
+		magic resist: 5003 					index_in_lp2: 2
 		
