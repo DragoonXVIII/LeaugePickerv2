@@ -52,7 +52,7 @@ private slots:
 
     void on_checkBox_2_clicked();
 
-    void on_pushButton_11_clicked();
+
 
     void on_pushButton_2_clicked();
 

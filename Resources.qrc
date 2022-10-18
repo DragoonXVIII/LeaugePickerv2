@@ -84,7 +84,7 @@
     </qresource>
     <qresource prefix="/Keystone/Sorcery/tab_2">
         <file>Runes/Basic_runes/Sorcery/excellence/Absolute Focus.png</file>
-        <file>Runes/Basic_runes/Sorcery/excellence/Celerity Temp.png</file>
+        <file>Runes/Basic_runes/Sorcery/excellence/Celerity.png</file>
         <file>Runes/Basic_runes/Sorcery/excellence/Transcendence.png</file>
     </qresource>
     <qresource prefix="/Keystone/Sorcery/tab_3">

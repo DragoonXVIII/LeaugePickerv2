@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QDir>
 #include <QFile>
@@ -22,6 +22,7 @@
 #include <QProcess>
 #include <QSslCertificate>
 #include <QSslSocket>
+#include <QDateTime>
 
 
 
@@ -109,17 +110,21 @@ QList<QString> directories_of_secondary_rune_tab(int i)
 
 
 
-//+=== Global Variables ===+
+//+=== Global variables that for some reason have to be here ===+
 
+QString http, auth, authkey;
 
 
 int ii,iii;                                                         //Randompickv8() non-repeat variable
 int tree_of_runes,secondary_tree_of_runes_tab,tab_anty_repeat;      //& runes non-reapeat variable
 int index_of_page=4,index_of_previous_page;
 
-int id_of_runes[10]; // 0 - main rune, 1 - m 1, 2 - m 2, 3 - m 3, 4 - secondary rune, 5 - s 1, 6 - s 2, 7 - a 1, 8 - a 2, 9 - a 3;
+int id_of_runes[9]; // 0 - main rune, 1 - m 1, 2 - m 2, 3 - m 3, 5 - s 1, 6 - s 2, 7 - a 1, 8 - a 2, 9 - a 3;
 
+int rune_ID, secondary_rune_ID;
 
+QString publicdataString;
+//int runes_ID_exchange[4][4];
 
 
 //+=== QT class ===+
@@ -155,16 +160,45 @@ MainWindow::MainWindow(QWidget *parent):
     {
         QByteArray data = reply->readAll();
         QString dataString = QString(data);
-        qDebug()<<dataString;
+        publicdataString = dataString;
 
-        QRegularExpression regex = QRegularExpression("\"id\":(.*?),");
-        QString id = regex.match(dataString).captured(1);
-        qDebug() << id;
+        if(reply->url().toString().contains("currentpage")){
+        QString id = QRegularExpression("\"id\":(.*?),").match(dataString).captured(1);
+        QNetworkRequest request_xd = QNetworkRequest(QUrl(http + "pages/" + id));
+        QSslConfiguration conf = request_xd.sslConfiguration();
+        conf.setPeerVerifyMode(QSslSocket::VerifyNone);
+        request_xd.setSslConfiguration(conf);
+        request_xd.setRawHeader("Authorization", QString("Basic "+authkey).toLocal8Bit());
 
-        // post request
+        // siema siema tu se popodmnieniaj wartosci w stringu tym wyzej :3
+
+        QDateTime asd(QDateTime::currentDateTime());
+        uint unixTime = asd.toMSecsSinceEpoch();
+        unixTime%=10000;
+        qDebug()<< unixTime;
+        QString yolo = "[LP2] Runes #" + QString::number(unixTime);
+        qDebug()<<yolo;
+        //name
+        dataString.replace(QRegularExpression("\"name\":\"(.*?)\"").match(dataString).captured(1), yolo);
+
+        //primaryStyle
+        dataString.replace("\"primaryStyleId\":" + QRegularExpression("\"primaryStyleId\":([0-9]+)").match(dataString).captured(1), "\"primaryStyleId\":" + QString::number(rune_ID));
+
+        //subStyle
+        dataString.replace("\"subStyleId\":" + QRegularExpression("\"subStyleId\":([0-9]+)").match(dataString).captured(1), "\"subStyleId\":" + QString::number(secondary_rune_ID));
+
+        //perksIds
+        QString runes;
+        for(int i = 0; i < 9; i++){
+            runes += QString::number(id_of_runes[i]);
+            if(i != 8) runes += ",";
+        }
+        dataString.replace(QRegularExpression("([0-9,]{44})").match(dataString).captured(1), runes);
+        qDebug() << runes;
+        mManager->put(request_xd, dataString.toUtf8());
 
 
-    });
+    }});
 
 }
 
@@ -176,6 +210,9 @@ MainWindow::~MainWindow()
 
 
 //+===================OTHER THAN MAINWINDOW XD===================+
+
+
+
 void MainWindow::check_files()
 {
     QList<QString> sets = {"ranked_champs.txt", "troll_champs.txt", "custom_set_1.txt", "custom_set_2.txt"};
@@ -233,11 +270,14 @@ void MainWindow::on_pushButton_6_clicked()
     }
     if(ui->stackedWidget->currentIndex()==1)
     {
-        MainWindow::pick_adaptive();
 
         MainWindow::pick_keystone_and_keystone_runes();
 
         MainWindow::pick_secondary_keystone_and_keystone_runes();
+
+        MainWindow::pick_adaptive();
+
+        MainWindow::on_pushButton_13_clicked();
     }
     //MainWindow::pick_champions_andor_keystone_andor_secondary_rune();
 
@@ -273,7 +313,9 @@ void MainWindow::pick_adaptive()
     //qDebug()<<adaptive_3;
     qDebug()<<ID_exchange[2][adaptive_3];
 
-
+    id_of_runes[6] = ID_exchange[0][adaptive_1]; // 0 - main rune, 1 - m 1, 2 - m 2, 3 - m 3, 5 - s 1, 6 - s 2, 7 - a 1, 8 - a 2, 9 - a 3;
+    id_of_runes[7] = ID_exchange[1][adaptive_2];
+    id_of_runes[8] = ID_exchange[2][adaptive_3];
 
     QString selected_adaptive_1_name = (adaptives_to_chose_from_1[adaptive_1]);
     QString selected_adaptive_2_name = (adaptives_to_chose_from_2[adaptive_2]);
@@ -318,7 +360,6 @@ void MainWindow::pick_keystone_and_keystone_runes()
 
     int picked_tree_of_runes_no = Randompickv8_2(5);
 
-    int ID_exchange[4][4] = {};
 
     int keystone;
     int keystone_tab_1;
@@ -332,7 +373,18 @@ void MainWindow::pick_keystone_and_keystone_runes()
     QString QDir_directory_of_rune_tree;
     QString selected_rune_tree;
 
+//    int runes_ID_exchange_Domination[4][4] = {{8128,8112,9923,8124},{8126,8143,8139,0},{8138,8120,8136,0},{8134,8105,8135,8106}};
+//    int runes_ID_exchange_Inspiration[4][4] = {8369,8351,8360,0,8306,8304,8313,0,8345,8321,8316,0,8410,8347,8352,0};
+//    int runes_ID_exchange_Precision[4][4] = {8010,8021,8008,8005,9101,8009,9111,0,9104,9103,9105,0,8014,8017,8299,0};
+//    int runes_ID_exchange_Resolve[4][4] = {8437,8465,8439,0,8446,8463,8401,0,8473,8429,8444,0,8451,8242,8453,0};
+//    int runes_ID_exchange_Sorcery[4][4] = {8229,8230,8214,0,8226,8275,8224,0,8233,8234,8210,0,8236,8237,8232,0};
 
+    int runesId_exchange[5][4][4] ={8128,8112,9923,8124,8126,8143,8139,0,8138,8120,8136,0,8134,8105,8135,8106,
+                                    8369,8351,8360,0,8306,8304,8313,0,8345,8321,8316,0,8410,8347,8352,0,
+                                   8010,8021,8008,8005,9101,8009,9111,0,9104,9103,9105,0,8014,8017,8299,0,
+                                   8437,8465,8439,0,8446,8463,8401,0,8473,8429,8444,0,8451,8242,8453,0,
+                                   8229,8230,8214,0,8226,8275,8224,0,8233,8234,8210,0,8236,8237,8232,0};
+    //int runes_ID_exchange[4][4] = {8128,8112,9923,8124,8126,8143,8139,0,8138,8120,8136,0,8134,8105,8135,8106};
 
     switch(picked_tree_of_runes_no)
     {
@@ -340,6 +392,7 @@ void MainWindow::pick_keystone_and_keystone_runes()
         case 0://Domination
         selected_rune_tree = "Domination";
         tree_of_runes = 0;
+        rune_ID=8100;
 
         QDir_directory_of_keystone_tab_1=":/Keystone/Domination/tab_1/Runes/Basic_runes/Domination/malice/";
         QDir_directory_of_keystone_tab_2=":/Keystone/Domination/tab_2/Runes/Basic_runes/Domination/tracking/";
@@ -351,6 +404,7 @@ void MainWindow::pick_keystone_and_keystone_runes()
         case 1://Inspiration
         selected_rune_tree = "Inspiration";
         tree_of_runes = 1;
+        rune_ID=8300;
 
         QDir_directory_of_keystone_tab_1=":/Keystone/Inspiration/tab_1/Runes/Basic_runes/Inspiration/contraptions/";
         QDir_directory_of_keystone_tab_2=":/Keystone/Inspiration/tab_2/Runes/Basic_runes/Inspiration/tomorrow/";
@@ -362,6 +416,7 @@ void MainWindow::pick_keystone_and_keystone_runes()
         case 2://Precision
         selected_rune_tree = "Precision";
         tree_of_runes = 2;
+        rune_ID=8000;
 
         QDir_directory_of_keystone_tab_1=":/Keystone/Precision/tab_1/Runes/Basic_runes/Precision/heroism/";
         QDir_directory_of_keystone_tab_2=":/Keystone/Precision/tab_2/Runes/Basic_runes/Precision/legend/";
@@ -373,6 +428,7 @@ void MainWindow::pick_keystone_and_keystone_runes()
         case 3://Resolve
         selected_rune_tree = "Resolve";
         tree_of_runes = 3;
+        rune_ID=8400;
 
         QDir_directory_of_keystone_tab_1=":/Keystone/Resolve/tab_1/Runes/Basic_runes/Resolve/strength/";
         QDir_directory_of_keystone_tab_2=":/Keystone/Resolve/tab_2/Runes/Basic_runes/Resolve/resistance/";
@@ -384,15 +440,18 @@ void MainWindow::pick_keystone_and_keystone_runes()
         case 4://Sorcery
         selected_rune_tree = "Sorcery";
         tree_of_runes = 4;
+        rune_ID=8200;
 
         QDir_directory_of_keystone_tab_1=":/Keystone/Sorcery/tab_1/Runes/Basic_runes/Sorcery/artifact/";
         QDir_directory_of_keystone_tab_2=":/Keystone/Sorcery/tab_2/Runes/Basic_runes/Sorcery/excellence/";
         QDir_directory_of_keystone_tab_3=":/Keystone/Sorcery/tab_3/Runes/Basic_runes/Sorcery/power/";
         QDir_directory_of_keystone=":/Keystone/Sorcery/keystone/Runes/Basic_runes/Sorcery/keystone/";
         QDir_directory_of_rune_tree=":/Keystone/Sorcery/Runes/Basic_runes/Sorcery/Sorcery.png";
+
         break;
 
     }
+    //int runes_ID_exchange[4][4];
 
     QDir directory_of_keystone_tab_1(QDir_directory_of_keystone_tab_1);
     QDir directory_of_keystone_tab_2(QDir_directory_of_keystone_tab_2);
@@ -409,13 +468,23 @@ void MainWindow::pick_keystone_and_keystone_runes()
     keystone_tab_3 = Randompickv8(keystone_tab_3_to_chose_from.length());
     keystone = Randompickv8(keystones_to_chose_from.length());
 
+
+    qDebug()<<keystone_tab_1;
+    qDebug()<<keystone_tab_2;
+    qDebug()<<keystone_tab_3;
+
     qDebug()<<"+===START===+";
-    qDebug()<<"main: "<<tree_of_runes;
-    qDebug()<<"keystone: "<<keystone;
-    qDebug()<<"keystone_tab_1: "<<keystone_tab_1;
-    qDebug()<<"keystone_tab_2: "<<keystone_tab_2;
-    qDebug()<<"keystone_tab_3: "<<keystone_tab_3;
+    qDebug()<<"main: "<<tree_of_runes<<" id: "<<rune_ID;
+    //qDebug()<<"keystone: "<<keystone<<" id: "<<runes_ID_exchange[0][keystone];
+    //qDebug()<<"keystone_tab_1: "<<keystone_tab_1<<" id: "<<runes_ID_exchange[1][keystone_tab_1];
+    //qDebug()<<"keystone_tab_2: "<<keystone_tab_2<<" id: "<<runes_ID_exchange[2][keystone_tab_2];
+    //qDebug()<<"keystone_tab_3: "<<keystone_tab_3<<" id: "<<runes_ID_exchange[3][keystone_tab_3];
     qDebug()<<"+===END===+";
+
+    id_of_runes[0] = runesId_exchange[tree_of_runes][0][keystone]; // 0 - main rune, 1 - m 1, 2 - m 2, 3 - m 3, 4 - secondary rune, 5 - s 1, 6 - s 2, 7 - a 1, 8 - a 2, 9 - a 3;
+    id_of_runes[1] = runesId_exchange[tree_of_runes][1][keystone_tab_1];
+    id_of_runes[2] = runesId_exchange[tree_of_runes][2][keystone_tab_2];
+    id_of_runes[3] = runesId_exchange[tree_of_runes][3][keystone_tab_3];
 
     QString selected_keystone_tab_1_name = (keystone_tab_1_to_chose_from[keystone_tab_1]);
     QString selected_keystone_tab_2_name = (keystone_tab_2_to_chose_from[keystone_tab_2]);
@@ -479,7 +548,8 @@ void MainWindow::pick_secondary_keystone_and_keystone_runes()
     int Randompickv8_2(int chosenarraylength);
     int Randompickv8_3(int chosenarraylength);
 
-
+    int secondary_keystone_tab_1,twojastara_1,twojastara_2;
+    int secondary_keystone_tab_2;
 
     int picked_tree_of_runes_no = Randompickv8_2(5);
 
@@ -491,50 +561,62 @@ void MainWindow::pick_secondary_keystone_and_keystone_runes()
     QString QDir_directory_of_secondary_keystone_tab_1;
     QString QDir_directory_of_secondary_keystone_tab_2;
 
+    int runesId_exchange[5][4][4] ={8128,8112,9923,8124,8126,8143,8139,0,8138,8120,8136,0,8134,8105,8135,8106,
+                                    8369,8351,8360,0,8306,8304,8313,0,8345,8321,8316,0,8410,8347,8352,0,
+                                   8010,8021,8008,8005,9101,8009,9111,0,9104,9103,9105,0,8014,8017,8299,0,
+                                   8437,8465,8439,0,8446,8463,8401,0,8473,8429,8444,0,8451,8242,8453,0,
+                                   8229,8230,8214,0,8226,8275,8224,0,8233,8234,8210,0,8236,8237,8232,0};
 
+    twojastara_1 = (Randompickv8_3(2));
+    twojastara_2 = (Randompickv8_3(2));
 
     switch(picked_tree_of_runes_no)
     {
-
     case 0://Domination
     secondary_tree_of_runes_name = "Domination";
+    secondary_rune_ID=8100;
 
     QDir_directory_of_rune_tree = ":/Keystone/Domination/Runes/Basic_runes/Domination/Domination.png";
-    QDir_directory_of_secondary_keystone_tab_1 = directories_of_secondary_rune_tab(0).at(Randompickv8_3(3));
-    QDir_directory_of_secondary_keystone_tab_2 = directories_of_secondary_rune_tab(0).at(Randompickv8_3(3));
+    QDir_directory_of_secondary_keystone_tab_1 = directories_of_secondary_rune_tab(0).at(twojastara_1);
+    QDir_directory_of_secondary_keystone_tab_2 = directories_of_secondary_rune_tab(0).at(twojastara_2);
+
     // 0 - main rune, 1 - m 1, 2 - m 2, 3 - m 3, 4 - secondary rune, 5 - s 1, 6 - s 2, 7 - a 1, 8 - a 2, 9 - a 3;
     break;
 
     case 1://Inspiration
     secondary_tree_of_runes_name = "Inspiration";
+    secondary_rune_ID=8300;
 
     QDir_directory_of_rune_tree = ":/Keystone/Inspiration/Runes/Basic_runes/Inspiration/Whimsy.png";
-    QDir_directory_of_secondary_keystone_tab_1 = directories_of_secondary_rune_tab(1).at(Randompickv8_3(3));
-    QDir_directory_of_secondary_keystone_tab_2 = directories_of_secondary_rune_tab(1).at(Randompickv8_3(3));
+    QDir_directory_of_secondary_keystone_tab_1 = directories_of_secondary_rune_tab(1).at(twojastara_1);
+    QDir_directory_of_secondary_keystone_tab_2 = directories_of_secondary_rune_tab(1).at(twojastara_2);
     break;
 
     case 2://Precision
     secondary_tree_of_runes_name = "Precision";
+    secondary_rune_ID=8000;
 
     QDir_directory_of_rune_tree = ":/Keystone/Precision/Runes/Basic_runes/Precision/Precision.png";
-    QDir_directory_of_secondary_keystone_tab_1 = directories_of_secondary_rune_tab(2).at(Randompickv8_3(3));
-    QDir_directory_of_secondary_keystone_tab_2 = directories_of_secondary_rune_tab(2).at(Randompickv8_3(3));
+    QDir_directory_of_secondary_keystone_tab_1 = directories_of_secondary_rune_tab(2).at(twojastara_1);
+    QDir_directory_of_secondary_keystone_tab_2 = directories_of_secondary_rune_tab(2).at(twojastara_2);
     break;
 
     case 3://Resolve
     secondary_tree_of_runes_name = "Resolve";
+    secondary_rune_ID=8400;
 
     QDir_directory_of_rune_tree = ":/Keystone/Resolve/Runes/Basic_runes/Resolve/Resolve.png";
-    QDir_directory_of_secondary_keystone_tab_1 = directories_of_secondary_rune_tab(3).at(Randompickv8_3(3));
-    QDir_directory_of_secondary_keystone_tab_2 = directories_of_secondary_rune_tab(3).at(Randompickv8_3(3));
+    QDir_directory_of_secondary_keystone_tab_1 = directories_of_secondary_rune_tab(3).at(twojastara_1);
+    QDir_directory_of_secondary_keystone_tab_2 = directories_of_secondary_rune_tab(3).at(twojastara_2);
     break;
 
     case 4://Sorcery
     secondary_tree_of_runes_name = "Sorcery";
+    secondary_rune_ID=8200;
 
     QDir_directory_of_rune_tree = ":/Keystone/Sorcery/Runes/Basic_runes/Sorcery/Sorcery.png";
-    QDir_directory_of_secondary_keystone_tab_1 = directories_of_secondary_rune_tab(4).at(Randompickv8_3(3));
-    QDir_directory_of_secondary_keystone_tab_2 = directories_of_secondary_rune_tab(4).at(Randompickv8_3(3));
+    QDir_directory_of_secondary_keystone_tab_1 = directories_of_secondary_rune_tab(4).at(twojastara_1);
+    QDir_directory_of_secondary_keystone_tab_2 = directories_of_secondary_rune_tab(4).at(twojastara_2);
     break;
     }
 
@@ -546,8 +628,15 @@ void MainWindow::pick_secondary_keystone_and_keystone_runes()
     QList<QString> secondary_keystone_tab_1_to_chose_from = directory_of_tab_1.entryList(QStringList(),QDir::Files);
     QList<QString> secondary_keystone_tab_2_to_chose_from = directory_of_tab_2.entryList(QStringList(),QDir::Files);
 
-    QString selected_secondary_keystone_tab_1_name = secondary_keystone_tab_1_to_chose_from[Randompickv8_3(secondary_keystone_tab_1_to_chose_from.length())];
-    QString selected_secondary_keystone_tab_2_name = secondary_keystone_tab_2_to_chose_from[Randompickv8_3(secondary_keystone_tab_2_to_chose_from.length())];
+    secondary_keystone_tab_1 = Randompickv8_3(secondary_keystone_tab_1_to_chose_from.length());
+    secondary_keystone_tab_2 = Randompickv8_3(secondary_keystone_tab_2_to_chose_from.length());
+
+    id_of_runes[4] = runesId_exchange[tree_of_runes][twojastara_1+1][secondary_keystone_tab_1];
+    id_of_runes[5] = runesId_exchange[tree_of_runes][twojastara_2+1][secondary_keystone_tab_2];
+
+    QString selected_secondary_keystone_tab_1_name = secondary_keystone_tab_1_to_chose_from[secondary_keystone_tab_1];
+    QString selected_secondary_keystone_tab_2_name = secondary_keystone_tab_2_to_chose_from[secondary_keystone_tab_2];
+
 
     QString selected_secondary_keystone_tab_1 = (QDir_directory_of_secondary_keystone_tab_1+selected_secondary_keystone_tab_1_name);
     QString selected_secondary_keystone_tab_2 = (QDir_directory_of_secondary_keystone_tab_2+selected_secondary_keystone_tab_2_name);
@@ -1071,7 +1160,9 @@ QList<QString> chosen_set(int index)
 
 
 
-bool does_champion_exist(QString Dr_Soskam) //Dr_Soskam => upośledzony gracz ligi legend (był bardzo pijany) ktory po zbanowaniu mi championa //             dostał wylewu i wodogłowia naraz, po czym zaczął mieć jakieś problemy z wyrażaniem //             samego siebie.
+bool does_champion_exist(QString Dr_Soskam) //Dr_Soskam => upośledzony gracz ligi legend (był bardzo pijany) ktory po zbanowaniu mi championa
+                                            //             dostał wylewu i wodogłowia naraz, po czym zaczął mieć jakieś problemy z wyrażaniem
+                                            //             samego siebie.
 {
     QList<QString> set = chosen_set(0);
     for(int i=0;i<set.length();i++)
@@ -1125,11 +1216,6 @@ void MainWindow::on_pushButton_9_clicked()
 }
 
 
-
-void MainWindow::on_pushButton_11_clicked() // add clicked
-{
-
-}
 
 //+=============================================TEST_END=====================================================+
 
@@ -1236,7 +1322,70 @@ void MainWindow::on_pushButton_12_clicked() //DELETE
     QList<QString> current_set_champs = chosen_set(ui->comboBox_2->currentIndex());
     bool hlpvar=FALSE;
 
+    for(int i=0;i<current_set_champs.length();i++)
+    {
+        qDebug()<<current_set_champs[i];
+        if(current_set_champs[i]==text_in_line+".png")
+        {
+            qDebug()<<"no jest taki champion to wiesz mordo, usuwamy frajera B)";
+            current_set_champs[i].clear();
+            hlpvar=TRUE;
+        }
+    }
+    if(!hlpvar)
+            qDebug()<<"mordo takiego goscia juz nie ma, nie bedziemy chyba kasowac powietrza?";
+
+    for(int i=0;i<current_set_champs.length();i++)
+
+    ui->lineEdit->clear();
+
+    //usuń plik/wyczysc a potem wypisz do niego current champion set
+
     switch(ui->comboBox_2->currentIndex())
+        {
+        case 1:
+            path = "ranked_champs.txt";
+            break;
+        case 2:
+            path = "troll_champs.txt";
+            break;
+        case 3:
+            path = "custom_set_1.txt";
+            break;
+        case 4:
+            path = "custom_set_2.txt";
+            break;
+        }
+
+    QFile txt(path);
+    if(txt.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text))
+    {
+        QTextStream stream(&txt);
+        for(int i=0;i<current_set_champs.length();i++)
+        {
+            if(!current_set_champs.isEmpty())
+                stream<<current_set_champs[i]+'\n';
+        }
+            txt.close();
+    }
+
+
+    ui->listWidget->clear();
+    for(int i=0;i<current_set_champs.length();i++)
+    {
+        if(!current_set_champs[i].isEmpty())
+        {
+        current_set_champs[i].remove(current_set_champs[i].length()-4,4);
+        ui->listWidget->addItem(current_set_champs[i]);
+        }
+    }
+
+
+
+
+    //bool hlpvar=FALSE;
+
+    /*switch(ui->comboBox_2->currentIndex())
     {
     case 1:
         path = "ranked_champs.txt";
@@ -1258,6 +1407,16 @@ void MainWindow::on_pushButton_12_clicked() //DELETE
             current_set_champs[i].clear();
     }
 
+    ui->listWidget->clear();
+
+    for(int i=0;i<current_set_champs.length();i++)
+    {
+        if(current_set_champs[i]!='\n')
+        {
+        current_set_champs[i].remove(current_set_champs[i].length()-4,4);
+        ui->listWidget->addItem(current_set_champs[i]);
+        }
+    }*/
 }
 
 
@@ -1269,8 +1428,11 @@ void MainWindow::on_comboBox_2_currentIndexChanged() //SHOW SETS
     ui->listWidget->clear();
     for(int i=0;i<current_set_champs.length();i++)
     {
+        if(!current_set_champs[i].isEmpty())
+        {
         current_set_champs[i].remove(current_set_champs[i].length()-4,4);
         ui->listWidget->addItem(current_set_champs[i]);
+        }
     }
 
 }
@@ -1368,22 +1530,40 @@ void MainWindow::on_pushButton_13_clicked()
 
     //https://api.ipify.org/
 
-    QString http = "https://127.0.0.1:" + port + "/lol-perks/v1/currentpage";
+    http = "https://127.0.0.1:" + port + "/lol-perks/v1/";
+    auth = "riot:"+password;
+    authkey = auth.toLocal8Bit().toBase64();
 
-    QNetworkRequest request_xd = QNetworkRequest(QUrl(http));
-    QString auth = "riot:"+password;
-    QByteArray jaktamchce = auth.toLocal8Bit().toBase64();
+    QNetworkRequest request_xd = QNetworkRequest(QUrl(http + "currentpage"));
     QSslConfiguration conf = request_xd.sslConfiguration();
     conf.setPeerVerifyMode(QSslSocket::VerifyNone);
     request_xd.setSslConfiguration(conf);
-
-    request_xd.setRawHeader("Authorization",QString("Basic "+jaktamchce).toLocal8Bit());
+    request_xd.setRawHeader("Authorization",QString("Basic "+authkey).toLocal8Bit());
     mManager->get(request_xd);
 
 
 }
-
+/*
 // nie usuwac
 int jebac_przemka;
 //xdxd
+
+int runes_ID_exchange[4][4];
+switch(jakas_zmienna)
+case 1:
+    runes_ID_exchange[4][4]={8369,8351,8360,0,8306,8304,8313,0,8345,8321,8316,0,8410,8347,8352,0};
+case 2:
+    runes_ID_exchange[4][4]={8010,8021,8008,8005,9101,8009,9111,0,9104,9103,9105,0,8014,8017,8299,0};
+case 3:
+    runes_ID_exchange[4][4]={8437,8465,8439,0,8446,8463,8401,0,8473,8429,8444,0,8451,8242,8453,0};
+case 4:
+    runes_ID_exchange[4][4]={8229,8230,8214,0,8226,8275,8224,0,8233,8234,8210,0,8236,8237,8232,0};
+case 5:
+    runes_ID_exchange[4][4]={8229,8230,8214,0,8226,8275,8224,0,8233,8234,8210,0,8236,8237,8232,0};
+
+//        {8128,8112,9923,8124,8126,8143,8139,0,8138,8120,8136,0,8134,8105,8135,8106};
+//  int runes_ID_exchange_Inspiration[4][4] = {8369,8351,8360,0,8306,8304,8313,0,8345,8321,8316,0,8410,8347,8352,0};
+//  int runes_ID_exchange_Precision[4][4] = {8010,8021,8008,8005,9101,8009,9111,0,9104,9103,9105,0,8014,8017,8299,0};
+//  int runes_ID_exchange_Resolve[4][4] = {8437,8465,8439,0,8446,8463,8401,0,8473,8429,8444,0,8451,8242,8453,0};
+//  int runes_ID_exchange_Sorcery[4][4] = {8229,8230,8214,0,8226,8275,8224,0,8233,8234,8210,0,8236,8237,8232,0};//*/
 
