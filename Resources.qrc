@@ -133,19 +133,21 @@
         <file>Runes/Basic_runes/Inspiration/beyond/Time Warp Tonic.png</file>
     </qresource>
     <qresource prefix="/Icons">
-        <file>../../Users/lotro/Downloads/Rune_icon.png</file>
-        <file>../../Users/lotro/Downloads/iconmonstr-gear-2-64 (2).png</file>
-        <file>../../Users/lotro/Downloads/helmet.png</file>
         <file>Background/Nexus-Blitz-Loading-Screen-scaled.jpg</file>
-        <file>../../Users/lotro/Downloads/iconmonstr-help-3-240.png</file>
         <file>Icons/vwk964k1e4z51.png</file>
         <file>Icons/Logo.png</file>
-        <file>../../Users/lotro/Downloads/iconmonstr-info-6-240.png</file>
         <file>Background/Nexus-Blitz-Loading-Screen-scaledcopy.jpg</file>
-        <file>../../Users/lotro/Downloads/iconmonstr-gear-2-240.png</file>
-        <file>../../Users/lotro/Downloads/iconmonstr-info-6-240 (1).png</file>
-        <file>../../Users/lotro/Downloads/rolling-dices.png</file>
         <file>Icons/Logo.ico</file>
+        <file>Icons/helmet.png</file>
+        <file>Icons/iconmonstr-gear-2-64 (2).png</file>
+        <file>Icons/iconmonstr-gear-2-240.png</file>
+        <file>Icons/iconmonstr-help-3-240.png</file>
+        <file>Icons/iconmonstr-info-6-240 (1).png</file>
+        <file>Icons/iconmonstr-info-6-240.png</file>
+        <file>Icons/profileIcon29.jpg</file>
+        <file>Icons/profileIcon29.png</file>
+        <file>Icons/rolling-dices.png</file>
+        <file>Icons/Rune_icon.png</file>
     </qresource>
     <qresource prefix="/Champions">
         <file>champion/Aatrox.png</file>
