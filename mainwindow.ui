@@ -2469,8 +2469,8 @@ background-color: #272a30}</string>
             <string>Champions</string>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>:/Icons/Users/lotro/Downloads/helmet.png</normaloff>:/Icons/Users/lotro/Downloads/helmet.png</iconset>
+            <iconset resource="Resources.qrc">
+             <normaloff>:/Icons/Icons/helmet.png</normaloff>:/Icons/Icons/helmet.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -2519,8 +2519,8 @@ background-color: #272a30}</string>
             <string>Runes</string>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>:/Icons/Users/lotro/Downloads/Rune_icon.png</normaloff>:/Icons/Users/lotro/Downloads/Rune_icon.png</iconset>
+            <iconset resource="Resources.qrc">
+             <normaloff>:/Icons/Icons/Rune_icon.png</normaloff>:/Icons/Icons/Rune_icon.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -3272,8 +3272,8 @@ transform: translateY(2px);}</string>
           <string>Click for random champion!</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>:/Icons/Users/lotro/Downloads/rolling-dices.png</normaloff>:/Icons/Users/lotro/Downloads/rolling-dices.png</iconset>
+          <iconset resource="Resources.qrc">
+           <normaloff>:/Icons/Icons/rolling-dices.png</normaloff>:/Icons/Icons/rolling-dices.png</iconset>
          </property>
          <property name="iconSize">
           <size>
