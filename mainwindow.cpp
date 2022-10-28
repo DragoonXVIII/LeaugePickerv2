@@ -39,6 +39,18 @@
 // - skrócić te nazwy cringeowe fest strasznie serio xd ( bo sie w labelach lanka nie mieszczom) xd
 
 
+
+//A po polsku: trzeba by to wszystko od nowa napisac xd, i wszystko z neta sciagac
+//(i mean grafiki nie uyztkowe oraz id run xdxd)
+
+/*
+ * top lista z maestrii,
+ * top 3 challenges
+ * actual rank (ikonki pobrane)
+ * chest granted!!!!!!!!!!!!!!!!!!!!
+ *
+ */
+
 //+=== Global functions that for some reason have to be here ===+
 
 
@@ -1439,8 +1451,10 @@ void MainWindow::on_comboBox_2_currentIndexChanged() //SHOW SETS
 
 
 
-//+=======================================WEB SERVICE(XDDDDDDDDDDDDDDDDDDDDDDDDDDDDD)========================================+
+//+=======================================WEB SERVICE(XDDDDDDDDDDDDDDDDDDDDDDDDDDDDD, <3)========================================+
 
+
+//maestria
 
 
 
