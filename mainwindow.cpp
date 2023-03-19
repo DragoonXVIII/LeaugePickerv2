@@ -45,8 +45,8 @@
 
 /*
  * top lista z maestrii,
- * top 3 challenges
- * actual rank (ikonki pobrane)
+ * top 3 challenges (ambitnie xD)
+ * actual rank (z neta)
  * chest granted!!!!!!!!!!!!!!!!!!!!
  *
  */
